@@ -181,8 +181,9 @@ struct r4300_core
     /* FIXME: better put that near linkage_arm code
      * to help generate call beyond the +/-32MB range.
      */
-    ALIGN(4096, char extra_memory[33554432]);
-    struct new_dynarec_hot_state new_dynarec_hot_state;
+    ALIGN(4096, unsigned char extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]);
+    unsigned char* extra_memory;
+	struct new_dynarec_hot_state new_dynarec_hot_state;
 #endif /* NEW_DYNAREC */
 
     unsigned int emumode;
