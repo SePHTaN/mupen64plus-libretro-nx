@@ -134,7 +134,11 @@ static int disasm_block[] = {0xa4000040};
 
 #include "device/r4300/new_dynarec/new_dynarec.h"
 #include "osal/preproc.h" //for ALIGN
-ALIGN(4096, static unsigned char recomp_dbg_extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]);
+/* FIXME: for rpi5 adjust cache_size to fit the 16k Pagesize
+* better would be to do this dynamically through the Makefile
+*/
+# ALIGN(4096, static unsigned char recomp_dbg_extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]); // old Cache_size infunctional for rpi5 with 16K Kernel
+ALIGN(16384, static unsigned char recomp_dbg_extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]);
 static unsigned char* recomp_dbg_extra_memory;
 
 // Recompile new_dynarec.c with the above redefinitions
