@@ -181,7 +181,11 @@ struct r4300_core
     /* FIXME: better put that near linkage_arm code
      * to help generate call beyond the +/-32MB range.
      */
-    ALIGN(4096, unsigned char extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]);
+    /* FIXME: for rpi5 adjust cache_size to fit the 16k Pagesize
+     * better would be to do this dynamically through the Makefile
+     */
+    # ALIGN(4096, unsigned char extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]); // the old way infunctional for rpi5 with 16k Pagesize Kernel
+    ALIGN(16384, unsigned char extra_memory_buffer[NEW_DYNAREC_CACHE_SIZE + NEW_DYNAREC_CACHE_PAGE_PAD]);
     unsigned char* extra_memory;
 	struct new_dynarec_hot_state new_dynarec_hot_state;
 #endif /* NEW_DYNAREC */
