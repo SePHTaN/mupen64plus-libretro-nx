@@ -7,6 +7,7 @@ To achieve this following changes were made:
 - added Parallel-RDP=1 to the Makefile for rpi5_64
 
 At least first tests with DOOM64, Forsaken and Mario Kart 64 were successful.
+
 To build this core:
 git clone https://github.com/SePHTaN/mupen64plus-libretro-nx.git
 cd mupen64plus-libretro-nx
