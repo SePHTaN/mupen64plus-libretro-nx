@@ -5,6 +5,7 @@ To achieve this following changes were made:
 - integrated [Dynarec Cache Alignment - support large page sizes](https://github.com/mupen64plus/mupen64plus-core/pull/1162) from archie2x
 - additionally statically changed New_Dynarec cache_size ALIGN to 16384, although dynamical alignment would be better and would work for non 16K Systems.
 - added Parallel-RDP=1 to the Makefile for rpi5_64
+
 At least first tests with DOOM64, Forsaken and Mario Kart 64 were successful.
 
 # Mupen64Plus-Next
