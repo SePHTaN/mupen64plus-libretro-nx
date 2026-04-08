@@ -10,7 +10,9 @@ At least first tests with DOOM64, Forsaken and Mario Kart 64 were successful.
 
 To build this core:
 git clone https://github.com/SePHTaN/mupen64plus-libretro-nx.git
+
 cd mupen64plus-libretro-nx
+
 make -j4 ARCH=aarch64 GLES=1 FORCE_GLES=1 platform=rpi5_64-mesa WITH_DYNAREC=aarch64
 
 # Mupen64Plus-Next
