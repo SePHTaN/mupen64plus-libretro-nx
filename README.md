@@ -1,7 +1,7 @@
 # About this Fork
 
 This Fork tries to get all RDP, RSP Plugins working for Raspberry Pi5 with 16K Pagesize Kernel.
-To achieve this following changes were made:
+To achieve this following changes were made to support 16k Pagesize:
 - integrated [Dynarec Cache Alignment - support large page sizes](https://github.com/mupen64plus/mupen64plus-core/pull/1162) from archie2x
 - additionally statically changed New_Dynarec cache_size ALIGN to 16384, although dynamical alignment would be better and would work for non 16K Systems.
 - added Parallel-RDP=1 to the Makefile for rpi5_64
